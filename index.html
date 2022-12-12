@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+
+
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body class="RGBWEB">
+    <div class="container">
+
+        <div class="img-select-flex">
+            <div class="cuadroImg">
+                <img class="img-responsive" id="testImg" name="myImage" src="/resources/img1.jpg" crossorigin="anonymous">
+            </div>
+
+            <form method="" action="" name="myForm">
+                <select size="4" name="switch" onchange="switchImage();">
+                    <option value="1">Imagen 1</option>
+                    <option value="2">Imagen 2</option>
+                    <option value="3">Imagen 3</option>
+                    <option value="4">Imagen 4</option>
+                </select>
+            </form>
+        </div>
+
+        <div class="graficas-flex">
+            <div id="rojoHisto"></div>
+            <div id="verdeHisto"></div>
+            <div id="azulHisto"></div>  
+        </div>
+          
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
