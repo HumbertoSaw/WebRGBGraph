@@ -9,7 +9,7 @@ var cont = 0;
 var imageList = Array();
 for (var i = 1; i <= 4; i++) {
     imageList[i] = new Image(70, 70);
-    imageList[i].src = "img/img" + i + ".jpg";
+    imageList[i].src = "img/img" + i + ".png";
 }
 function switchImage() {
     var selectedImage = document.myForm.switch.options[document.myForm.switch.selectedIndex].value;
