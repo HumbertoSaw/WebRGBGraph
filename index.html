@@ -6,21 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
 
     <link rel="stylesheet" href="styles.css">
     <title>RGBWEB</title>
 </head>
 <body class="RGBWEB">
-    <div class="container">
+    <div class="container bg-green-100">
 
-        <div class="img-select-flex">
+        <div class="img-select-flex bg-purple-200">
             <div class="cuadroImg">
                 <img class="img-responsive" id="testImg" name="myImage" src="img/img1.jpg">
             </div>
 
-            <form method="" action="" name="myForm">
-                <select size="4" name="switch" onchange="switchImage();">
+            <form method="" action="" name="myForm" class="mx-3 bg-purple-300 px-1 py-1" >
+                <select size="4" name="switch" onchange="switchImage();" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option value="1">Imagen 1</option>
                     <option value="2">Imagen 2</option>
                     <option value="3">Imagen 3</option>
@@ -29,11 +30,38 @@
             </form>
         </div>
 
-        <div class="graficas-flex">
+        <div class="graficas-flex border-purple-500">
             <div id="rojoHisto"></div>
             <div id="verdeHisto"></div>
             <div id="azulHisto"></div>  
-        </div>         
+        </div> 
+        
+        
+    </div>
+    <div class="flex h-80 w-80 border-blue-500  flex-col ">
+
+        <div class="container border-yellow-900 p-2 flex flex-row">
+            <div class="basis-1/2 ">Resolución de la imagen:</div>
+            <div class="basis-1/2  ">3688 x 2055</div>
+
+        </div>
+        <div class="container border-yellow-900 p-2 flex flex-row">
+            <div class="basis-1/2 ">Nombre imagen:</div>
+            <div class="basis-1/2  ">img1</div>
+
+        </div>
+        <div class="container border-yellow-900 p-2 flex flex-row">
+            <div class="basis-1/2 ">tipo:</div>
+            <div class="basis-1/2  ">png</div>
+
+        </div>
+        <div class="container border-yellow-900 p-2 flex flex-row">
+            <div class="basis-1/2 ">Tamaño imgagen:</div>
+            <div class="basis-1/2  ">32mb</div>
+
+        </div>
+
+
     </div>
 
     <script src="app.js"></script>

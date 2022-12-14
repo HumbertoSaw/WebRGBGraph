@@ -8,9 +8,9 @@
 
 .container{
     padding: 10px;
-    border-style: dashed;
+    border-style: solid;
     border-color: rgb(139, 201, 255);
-    border-width: 3px;
+    border-width: 2px;
     display: flex;
     flex-direction: row;
     align-content: flex-start;
@@ -24,10 +24,10 @@
     flex-direction: row;
     align-items: center;
     column-gap: 40px;
-    border-style: dashed;
+    border-style: solid;
     border-color: rgb(54, 129, 194);
-    border-width: 3px;
-    padding: 5px;
+    border-width: 1px;
+    padding: 10px;
     padding-left: 10px;
     padding-right: 10px; 
 }
@@ -39,7 +39,7 @@
 	display: block;
 	max-width: 100%;
 }
-select{
+/*select{
     appearance: none;
     outline: none;
     background-color: transparent;
@@ -54,7 +54,7 @@ select{
     font-family: 'Montserrat';
     font-weight: bold;
     color: rgb(24, 101, 168); 
-}
+}*/
 
 .graficas-flex{
     padding: 10px;
