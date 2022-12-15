@@ -10,7 +10,7 @@ var cont = 0;
 var imageList = Array();
 for (var i = 0; i <= 7; i++) {
     imageList[i] = new Image(70, 70);
-    imageList[i].src = "https://i.postimg.cc/" + imgLinkList[i] + "/" +i+ ".jpg";
+    imageList[i].src = "https://i.postimg.cc/" + imgLinkList[i-1] + "/" +i+ ".jpg";
 }
 function switchImage() {
     var selectedImage = document.myForm.switch.options[document.myForm.switch.selectedIndex].value;
