@@ -6,8 +6,13 @@ const blue = [];
 const alpha = [];
 const imgLinkList = ["nzL5D6SX","NGCtpx1h","tgp8X1ht","RFPkpMJ1","HkqX55SX","9MV9g2Hf"];
 var cont = 0;
-
 var imageList = Array();
+
+fetch("json/json1.json").then((response) => {
+  return response.json();
+})
+.then((json) => jsonPrint.innerHTML = json.nombre + "<br>" + json.formato + "<br>"+ json.peso+ "<br>"+json.url+ "<br>"+json.res+ "<br>"+ json.des + "<br>"+json.date);
+
 for (var i = 0; i <= 7; i++) {
     imageList[i] = new Image(70, 70);
     imageList[i].src = "https://i.postimg.cc/" + imgLinkList[i-1] + "/" +i+ ".jpg";
@@ -16,10 +21,10 @@ function switchImage() {
     var selectedImage = document.myForm.switch.options[document.myForm.switch.selectedIndex].value;
     document.myImage.src = imageList[selectedImage].src;
 
-    fetch("json/json" + selselectedImage +".json").then((response) => {
+    fetch("json/json" + selectedImage +".json").then((response) => {
       return response.json();
     })
-    .then((json) => jsonPrint.innerHTML = json.formato + "<br>" + json.peso + "<br>" + json.url + "<br>" + json.x + "<br>" + json.y  + "<br>" + json.fecha);
+    .then((json) => jsonPrint.innerHTML = json.nombre + "<br>" + json.formato + "<br>"+ json.peso+ "<br>"+json.url+ "<br>"+json.res+ "<br>"+ json.des + "<br>"+json.date);
 }
 
 imagen.addEventListener('click', function (e) {
