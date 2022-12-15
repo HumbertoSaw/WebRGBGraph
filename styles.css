@@ -5,12 +5,14 @@
     align-items: center;
     align-content: center;
 }
+.img-responsive{
+	display: block;
+	max-width: 100%;
+}
 
 .container{
     padding: 10px;
-    border-style: solid;
-    border-color: rgb(139, 201, 255);
-    border-width: 2px;
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     align-content: flex-start;
@@ -18,44 +20,23 @@
     width: 945px;
     height: 915px;
 }
-
-.img-select-flex{
+.img-selector{
     display:  flex;
     flex-direction: row;
-    align-items: center;
+}
+.img-select-json-flex{
+    display:  flex;
+    flex-direction: column;
     column-gap: 40px;
-    border-style: solid;
-    border-color: rgb(54, 129, 194);
-    border-width: 1px;
-    padding: 10px;
-    padding-left: 10px;
-    padding-right: 10px; 
+    padding: 20px;
 }
 .cuadroImg{    
     max-width: 200px;
     width: 100%;
 }
-.img-responsive{
-	display: block;
-	max-width: 100%;
+#jsonPrint{
+    padding: 10px;
 }
-/*select{
-    appearance: none;
-    outline: none;
-    background-color: transparent;
-    border: none;
-    padding: 0 1em 0 0;
-    margin: 0;
-    width: 100%;
-    font-family: inherit;
-    font-size: inherit;
-    cursor: inherit;
-    line-height: inherit;
-    font-family: 'Montserrat';
-    font-weight: bold;
-    color: rgb(24, 101, 168); 
-}*/
-
 .graficas-flex{
     padding: 10px;
     padding-left: 20px;

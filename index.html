@@ -14,54 +14,32 @@
 </head>
 <body class="RGBWEB">
     <div class="container bg-green-100">
+        <div class="img-select-json-flex bg-purple-200">
+            <div class="img-selector">
+                <div class="cuadroImg">
+                    <img class="img-responsive" id="testImg" name="myImage" src="https://i.postimg.cc/nzL5D6SX/img1.jpg" crossorigin="anonymous">
+                </div>
 
-        <div class="img-select-flex bg-purple-200">
-            <div class="cuadroImg">
-                <img class="img-responsive" id="testImg" name="myImage" src="img/img1.jpg">
+                <form method="" action="" name="myForm" class="mx-3 bg-purple-300 px-1 py-1" >
+                    <select size="5" name="switch" onchange="switchImage();" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="1">Imagen 1</option>
+                        <option value="2">Imagen 2</option>
+                        <option value="3">Imagen 3</option>
+                        <option value="4">Imagen 4</option>
+                        <option value="5">Imagen 5</option>
+
+                    </select>
+                </form>
             </div>
-
-            <form method="" action="" name="myForm" class="mx-3 bg-purple-300 px-1 py-1" >
-                <select size="4" name="switch" onchange="switchImage();" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    <option value="1">Imagen 1</option>
-                    <option value="2">Imagen 2</option>
-                    <option value="3">Imagen 3</option>
-                    <option value="4">Imagen 4</option>
-                </select>
-            </form>
+            <div id="jsonPrint"></div>
         </div>
-
+            
         <div class="graficas-flex border-purple-500">
             <div id="rojoHisto"></div>
             <div id="verdeHisto"></div>
             <div id="azulHisto"></div>  
         </div> 
         
-        
-    </div>
-    <div class="flex h-80 w-80 border-blue-500  flex-col ">
-
-        <div class="container border-yellow-900 p-2 flex flex-row">
-            <div class="basis-1/2 ">Resolución de la imagen:</div>
-            <div class="basis-1/2  ">3688 x 2055</div>
-
-        </div>
-        <div class="container border-yellow-900 p-2 flex flex-row">
-            <div class="basis-1/2 ">Nombre imagen:</div>
-            <div class="basis-1/2  ">img1</div>
-
-        </div>
-        <div class="container border-yellow-900 p-2 flex flex-row">
-            <div class="basis-1/2 ">tipo:</div>
-            <div class="basis-1/2  ">png</div>
-
-        </div>
-        <div class="container border-yellow-900 p-2 flex flex-row">
-            <div class="basis-1/2 ">Tamaño imgagen:</div>
-            <div class="basis-1/2  ">32mb</div>
-
-        </div>
-
-
     </div>
 
     <script src="app.js"></script>

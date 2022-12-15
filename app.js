@@ -4,16 +4,22 @@ const red = [];
 const green = [];
 const blue = [];
 const alpha = [];
+const imgLinkList = ["nzL5D6SX","NGCtpx1h","tgp8X1ht","RFPkpMJ1","HkqX55SX","9MV9g2Hf"];
 var cont = 0;
 
 var imageList = Array();
-for (var i = 1; i <= 4; i++) {
+for (var i = 0; i <= 7; i++) {
     imageList[i] = new Image(70, 70);
-    imageList[i].src = "img/img" + i + ".jpg";
+    imageList[i].src = "https://i.postimg.cc/" + imgLinkList[i] + "/" +i+ ".jpg";
 }
 function switchImage() {
     var selectedImage = document.myForm.switch.options[document.myForm.switch.selectedIndex].value;
     document.myImage.src = imageList[selectedImage].src;
+
+    fetch("json/json" + selselectedImage +".json").then((response) => {
+      return response.json();
+    })
+    .then((json) => jsonPrint.innerHTML = json.formato + "<br>" + json.peso + "<br>" + json.url + "<br>" + json.x + "<br>" + json.y  + "<br>" + json.fecha);
 }
 
 imagen.addEventListener('click', function (e) {
