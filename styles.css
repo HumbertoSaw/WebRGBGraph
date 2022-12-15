@@ -30,9 +30,9 @@
     width: 450px;  
 }
 .cuadroImg{    
-    max-width: 200px;
-    width: 100%;
-    height: 270px;
+    max-width: 250px;
+    
+    
 }
 #jsonPrint{
     padding: 10px;

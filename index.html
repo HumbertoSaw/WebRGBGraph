@@ -13,16 +13,21 @@
     <link rel="stylesheet" href="styles.css">
     <title>RGBWEB</title>
 </head>
-<body class="RGBWEB bg-gray-400 flex mx-auto ">
-    <div class="flex mx-auto   justify-between">
+<body class="RGBWEB bg-gray-400 flex mx-auto my-3">
+    <div class="flex mx-auto  bg-gray-800 justify-between rounded-[30px]">
         <div class="img-select-json-flex bg-green-400 flex mx-auto mx-8 my-8 rounded-3xl ">
+
+            <p class="text-center text-red-900 text-xl my-3 mx-3 py-3 bg-gray-100 rounded-3xl">De click en cualquier parte de la imagen.</p>
+
             <div class="img-selector flex justify-between mx-3 mt-3">
+
                 <div class="cuadroImg content-center ">
                     <img class="img-responsive " id="testImg" name="myImage" src="https://i.postimg.cc/nzL5D6SX/img1.jpg" crossorigin="anonymous">
                 </div>
 
                 <form method="" action="" name="myForm" class="" >
-                    <select size="6" name="switch" onchange="switchImage();" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <select size="1" name="switch" onchange="switchImage();" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        
                         <option value="1">Imagen 1</option>
                         <option value="2">Imagen 2</option>
                         <option value="3">Imagen 3</option>
@@ -33,7 +38,7 @@
                     </select>
                 </form>
             </div>
-            <div class="bg-blue-100 rounded-3xl mt-8 ">
+            <div class="bg-blue-100 rounded-3xl mt-16 ">
                 <div Class="text-xl text-center text-red-900  ">
                     Metadatos
                 </div>
