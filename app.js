@@ -31,7 +31,7 @@ function switchImage() {
     })
     .then((json) => jsonPrint.innerHTML = "Nombre: " + json.nombre + "<br>" + "Formato: " + json.formato + "<br>"+ "Peso: " + json.peso+ "<br>"+ "URL: " + json.url+ "<br>"+ "Res: " + json.res+ "<br>"+ "Descripción: " + json.des + "<br>"+ "Fecha: " + json.date);
 }
-
+/*
 imagen.addEventListener('click', function (e) {
   const red = [];
   const green = [];
@@ -50,6 +50,7 @@ imagen.addEventListener('click', function (e) {
   }
   const pixel = ctx.getImageData(e.offsetX, e.offsetY, punterow, punteroh).data;
   console.log(pixel);
+  console.log(pixel.length);
   for(let i = 0; i < pixel.length; i++){
     red[cont] = pixel[i];
     i += 1;
@@ -98,7 +99,7 @@ imagen.addEventListener('click', function (e) {
   Plotly.newPlot('verdeHisto', data2, layout);
   Plotly.newPlot('azulHisto', data3, layout);              
 });
-
+*/
 $(document).ready(function(){
   $('#testImg').Jcrop({
     onSelect: function(c){
@@ -110,7 +111,73 @@ $(document).ready(function(){
       punterow = (c.w);
       punteroh = (c.h);
       console.log(punterow);
-      console.log(punteroh);
+      console.log(punteroh)
+
+      const red = [];
+      const green = [];
+      const blue = [];
+      const alpha = [];
+      let ctx;
+    
+      if(!this.canvas) {
+          this.canvas = document.createElement('canvas');
+          this.canvas.width = this.width;
+          this.canvas.height = this.height;
+          ctx=this.canvas.getContext('2d');
+          ctx.drawImage(this, 0, 0, this.width, this.height);
+      } else {
+        ctx=this.canvas.getContext('2d');
+      }
+      const pixel = ctx.getImageData(punterox, punteroy, punterow, punteroh).data;
+      console.log("esto es pixel: "+pixel);
+
+      for(let i = 0; i < pixel.length; i++){
+        red[cont] = pixel[i];
+        i += 1;
+        green[cont] = pixel[i];
+        i += 1;
+        blue[cont] = pixel[i];
+        i += 1;
+        alpha[cont] = pixel[i];
+        cont += 1;
+      }
+      var traceRed = {
+        x: red,
+        type: 'histogram',
+        name: "Rojo",
+        marker: {
+          color: '#ff7c73',
+        },
+      };  
+      var traceGreen = {
+        x: green,
+        type: 'histogram',
+        name: "Verde",
+        marker: {
+        color: '#6ff77f',
+        },
+      };
+      var traceBlue = {
+        x: blue,
+        type: 'histogram',
+        name: "Azul",
+        marker: {
+          color: '#6fc7f7',
+        },
+      };
+      var layout = {
+        autosize: false,
+        width: 500,
+        height: 300,
+      };
+      
+      var data1 = [traceRed];
+      var data2 = [traceGreen];
+      var data3 = [traceBlue];
+    
+      Plotly.newPlot('rojoHisto', data1, layout);
+      Plotly.newPlot('verdeHisto', data2, layout);
+      Plotly.newPlot('azulHisto', data3, layout);  
     }
   })
 })
