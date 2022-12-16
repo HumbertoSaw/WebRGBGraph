@@ -11,7 +11,7 @@ var imageList = Array();
 fetch("json/json1.json").then((response) => {
   return response.json();
 })
-.then((json) => jsonPrint.innerHTML = json.nombre + "<br>" + json.formato + "<br>"+ json.peso+ "<br>"+json.url+ "<br>"+json.res+ "<br>"+ json.des + "<br>"+json.date);
+.then((json) => jsonPrint.innerHTML = "Nombre: " + json.nombre + "<br>" + "Formato: " + json.formato + "<br>"+ "Peso: " + json.peso+ "<br>"+ "URL: " + json.url+ "<br>"+ "Resolución: " + json.res+ "<br>"+ "Descripción: " + json.des + "<br>"+ "Fecha: " + json.date);
 
 for (var i = 0; i <= 7; i++) {
     imageList[i] = new Image(70, 70);
@@ -24,7 +24,7 @@ function switchImage() {
     fetch("json/json" + selectedImage +".json").then((response) => {
       return response.json();
     })
-    .then((json) => jsonPrint.innerHTML = json.nombre + "<br>" + json.formato + "<br>"+ json.peso+ "<br>"+json.url+ "<br>"+json.res+ "<br>"+ json.des + "<br>"+json.date);
+    .then((json) => jsonPrint.innerHTML = "Nombre: " + json.nombre + "<br>" + "Formato: " + json.formato + "<br>"+ "Peso: " + json.peso+ "<br>"+ "URL: " + json.url+ "<br>"+ "Res: " + json.res+ "<br>"+ "Descripción: " + json.des + "<br>"+ "Fecha: " + json.date);
 }
 
 imagen.addEventListener('click', function (e) {
