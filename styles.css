@@ -39,11 +39,12 @@
     margin-top: 10px;
     font-family: 'Cascadia Code', sans-serif;
 }
-.graficas-flex{
+/*.graficas-flex{
     
     display: flex;
     flex-direction: column;
-}
+    width: 100px;
+}*/
 
 
 
