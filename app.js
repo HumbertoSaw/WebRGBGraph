@@ -5,10 +5,13 @@ const green = [];
 const blue = [];
 const alpha = [];
 const imgLinkList = ["nzL5D6SX","NGCtpx1h","tgp8X1ht","RFPkpMJ1","HkqX55SX","9MV9g2Hf"];
-var punterox = 0;
-var punteroy = 0;
 var cont = 0;
 var imageList = Array();
+
+var punterox = 0;
+var punteroy = 0;
+var punterow = 0;
+var punteroh = 0;
 
 fetch("json/json1.json").then((response) => {
   return response.json();
@@ -45,8 +48,8 @@ imagen.addEventListener('click', function (e) {
   } else {
     ctx=this.canvas.getContext('2d');
   }
-  const pixel = ctx.getImageData(e.offsetX, e.offsetY, 5, 5).data;
-    
+  const pixel = ctx.getImageData(e.offsetX, e.offsetY, punterow, punteroh).data;
+  console.log(pixel);
   for(let i = 0; i < pixel.length; i++){
     red[cont] = pixel[i];
     i += 1;
@@ -57,43 +60,58 @@ imagen.addEventListener('click', function (e) {
     alpha[cont] = pixel[i];
     cont += 1;
   }
-    var traceRed = {
-      x: red,
-      type: 'histogram',
-      name: "Rojo",
-      marker: {
-        color: '#ff7c73',
-      },
-    };  
-    var traceGreen = {
-      x: green,
-      type: 'histogram',
-      name: "Verde",
-      marker: {
-        color: '#6ff77f',
-      },
-    };
-    var traceBlue = {
-      x: blue,
-      type: 'histogram',
-      name: "Azul",
-      marker: {
-        color: '#6fc7f7',
-      },
-    };
+  var traceRed = {
+    x: red,
+    type: 'histogram',
+    name: "Rojo",
+    marker: {
+      color: '#ff7c73',
+    },
+  };  
+  var traceGreen = {
+    x: green,
+    type: 'histogram',
+    name: "Verde",
+    marker: {
+    color: '#6ff77f',
+    },
+  };
+  var traceBlue = {
+    x: blue,
+    type: 'histogram',
+    name: "Azul",
+    marker: {
+      color: '#6fc7f7',
+    },
+  };
+  var layout = {
+    autosize: false,
+    width: 500,
+    height: 300,
+  };
+  
+  var data1 = [traceRed];
+  var data2 = [traceGreen];
+  var data3 = [traceBlue];
 
-    var layout = {
-      autosize: false,
-      width: 500,
-      height: 300,
-    };
-    var data1 = [traceRed];
-    var data2 = [traceGreen];
-    var data3 = [traceBlue];
-    Plotly.newPlot('rojoHisto', data1, layout);
-    Plotly.newPlot('verdeHisto', data2, layout);
-    Plotly.newPlot('azulHisto', data3, layout);
-               
+  Plotly.newPlot('rojoHisto', data1, layout);
+  Plotly.newPlot('verdeHisto', data2, layout);
+  Plotly.newPlot('azulHisto', data3, layout);              
 });
 
+$(document).ready(function(){
+  $('#testImg').Jcrop({
+    onSelect: function(c){
+      punterox = (c.x);
+      punteroy = (c.y);
+      console.log(punterox);
+      console.log(punteroy);
+
+      punterow = (c.w);
+      punteroh = (c.h);
+      console.log(punterow);
+      console.log(punteroh);
+    }
+  })
+})
 
