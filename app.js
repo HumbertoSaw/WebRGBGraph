@@ -5,6 +5,8 @@ const green = [];
 const blue = [];
 const alpha = [];
 const imgLinkList = ["nzL5D6SX","NGCtpx1h","tgp8X1ht","RFPkpMJ1","HkqX55SX","9MV9g2Hf"];
+var punterox = 0;
+var punteroy = 0;
 var cont = 0;
 var imageList = Array();
 
