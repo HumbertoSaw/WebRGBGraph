@@ -8,6 +8,8 @@ const imgLinkList = ["nzL5D6SX","NGCtpx1h","tgp8X1ht","RFPkpMJ1","HkqX55SX","9MV
 var cont = 0;
 var imageList = Array();
 
+var frame = document.querySelector('canvas');
+var ctx = frame.getContext('2d');
 var punterox = 0;
 var punteroy = 0;
 var punterow = 0;
@@ -117,17 +119,8 @@ $(document).ready(function(){
       const green = [];
       const blue = [];
       const alpha = [];
-      let ctx;
-    
-      if(!this.canvas) {
-          this.canvas = document.createElement('canvas');
-          this.canvas.width = this.width;
-          this.canvas.height = this.height;
-          ctx=this.canvas.getContext('2d');
-          ctx.drawImage(this, 0, 0, this.width, this.height);
-      } else {
-        ctx=this.canvas.getContext('2d');
-      }
+
+      ctx.drawImage(imagen,0,0);
       const pixel = ctx.getImageData(punterox, punteroy, punterow, punteroh).data;
       console.log("esto es pixel: "+pixel);
 
