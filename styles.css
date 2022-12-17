@@ -5,19 +5,17 @@
     align-items: center;
     align-content: center;
 }
+canvas{
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    height: 350px;
+}
 .img-responsive{
 	display: block;
 	max-width: 100%;
 }
 
-/*.container{
-    padding: 0px;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    align-content: flex-start;
-    align-items: flex-start;   
-}*/
 .img-selector{
     display:  flex;
     flex-direction: row;
@@ -25,7 +23,6 @@
 .img-select-json-flex{
     display:  flex;
     flex-direction: column;
-    /*column-gap: 40px;*/
     padding:30px;
     width: 500px;  
 }
@@ -39,12 +36,4 @@
     margin-top: 10px;
     font-family: 'Cascadia Code', sans-serif;
 }
-/*.graficas-flex{
-    
-    display: flex;
-    flex-direction: column;
-    width: 100px;
-}*/
-
-
 

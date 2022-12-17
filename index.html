@@ -6,15 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link href="https://fonts.cdnfonts.com/css/cascadia-code" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-jcrop/0.9.15/css/jquery.Jcrop.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-jcrop/0.9.15/js/jquery.Jcrop.js"></script>
-
     <script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.6/underscore-umd-min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <title>RGBWEB</title>
 
@@ -28,8 +25,7 @@
         <img Class= "h-36 mx-2 py-4" src="logoTec.png" >
         <p class="text-center my-6  text-blue-900 text-3xl mr-18 py-8 font-bold">Instituto tecnológico de Chetumal</p>
     </div>
-
-    <canvas style="display: none;" id="canvas"></canvas>
+ 
     <!--Contenido de la página-->
     <div class="flex mx-auto   justify-between ">
         <!--Contenedor de imagenes e información-->
@@ -38,10 +34,10 @@
             <p class="text-center text-gray-800 text-xl my-3 mx-3 py-3  font-bold">De click en cualquier parte de la imagen.</p>
 
             <!--Imagen y selección-->
+            <canvas id="canvas"></canvas>
             <div class="img-selector flex justify-between mx-3 mt-3">
-
                 <div class="cuadroImg content-center ">
-                    <img class="img-responsive" id="testImg" name="myImage" src="https://i.postimg.cc/nzL5D6SX/img1.jpg" crossorigin="anonymous">
+                    <img style="display: none;" class="img-responsive" id="testImg" name="myImage" src="https://i.postimg.cc/nzL5D6SX/img1.jpg" crossorigin="anonymous">
                 </div>
 
                 <form method="" action="" name="myForm" class="" >
