@@ -29,6 +29,7 @@ for (var i = 0; i <= 7; i++) {
 function switchImage() {
     var selectedImage = document.myForm.switch.options[document.myForm.switch.selectedIndex].value;
     document.myImage.src = imageList[selectedImage].src;
+    context.drawImage(imagen,0,0,canvas.width,canvas.height);
 
     fetch("json/json" + selectedImage +".json").then((response) => {
       return response.json();
