@@ -18,7 +18,7 @@ canvas{
 
 .img-selector{
     display:  flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 .img-select-json-flex{
     display:  flex;
