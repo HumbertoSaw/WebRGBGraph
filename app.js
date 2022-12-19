@@ -14,6 +14,8 @@ var punterow = 0;
 var punteroh = 0;
 
 var canvas = document.getElementById('canvas');
+canvas.width  = (imagen.width / 2);
+canvas.height = (imagen.height / 2);
 var context = canvas.getContext("2d");
 
 context.drawImage(imagen,0,0,canvas.width,canvas.height);
@@ -27,14 +29,15 @@ for (var i = 0; i <= 7; i++) {
     imageList[i].src = "https://i.postimg.cc/" + imgLinkList[i-1] + "/" +i+ ".jpg";
 }
 function switchImage() {
-    var selectedImage = document.myForm.switch.options[document.myForm.switch.selectedIndex].value;
-    document.myImage.src = imageList[selectedImage].src;
-    context.drawImage(imagen,0,0,canvas.width,canvas.height);
+  var selectedImage = document.myForm.switch.options[document.myForm.switch.selectedIndex].value;
+  document.myImage.src = imageList[selectedImage].src;
+  context.drawImage(imagen,0,0,canvas.width,canvas.height);
+  
 
-    fetch("json/json" + selectedImage +".json").then((response) => {
-      return response.json();
-    })
-    .then((json) => jsonPrint.innerHTML = "Nombre: " + json.nombre + "<br>" + "Formato: " + json.formato + "<br>"+ "Peso: " + json.peso+ "<br>"+ "URL: " + json.url+ "<br>"+ "Res: " + json.res+ "<br>"+ "Descripción: " + json.des + "<br>"+ "Fecha: " + json.date);
+  fetch("json/json" + selectedImage +".json").then((response) => {
+    return response.json();
+  })
+  .then((json) => jsonPrint.innerHTML = "Nombre: " + json.nombre + "<br>" + "Formato: " + json.formato + "<br>"+ "Peso: " + json.peso+ "<br>"+ "URL: " + json.url+ "<br>"+ "Res: " + json.res+ "<br>"+ "Descripción: " + json.des + "<br>"+ "Fecha: " + json.date);
 }
 
 $(document).ready(function(){
