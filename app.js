@@ -32,7 +32,6 @@ function switchImage() {
   var selectedImage = document.myForm.switch.options[document.myForm.switch.selectedIndex].value;
   document.myImage.src = imageList[selectedImage].src;
   context.drawImage(imagen,0,0,canvas.width,canvas.height);
-  
 
   fetch("json/json" + selectedImage +".json").then((response) => {
     return response.json();
@@ -59,7 +58,6 @@ $(document).ready(function(){
       const alpha = [];
 
       const pixel = context.getImageData(punterox, punteroy, punterow, punteroh).data;
-      console.log("esto es pixel: "+pixel);
 
       for(let i = 0; i < pixel.length; i++){
         red[cont] = pixel[i];
